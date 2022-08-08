@@ -10,3 +10,5 @@ class devConfig(config):
 
 class testingConfig(config):
     DATABASE_URI = 'sqlite:///:memory:'
+    HOST = "0.0.0.0"
+    DEBUG = True
