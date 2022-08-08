@@ -6,7 +6,7 @@ class prodConfig(config):
     DATABASE_URI = 'To be decided'
 
 class devConfig(config):
-    DATABASE_URI = "sqlite:///temp/foo.db"
+    DATABASE_URI = "sqlite:///temp/data.db"
 
 class testingConfig(config):
     DATABASE_URI = 'sqlite:///:memory:'
