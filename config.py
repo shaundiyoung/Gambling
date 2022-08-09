@@ -6,10 +6,10 @@ class prodConfig(config):
     DATABASE_URI = 'To be decided'
 
 class devConfig(config):
-    DATABASE_URI = "sqlite:///temp/data.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///api/data.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     HOST = "0.0.0.0"
     DEBUG = True
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class testingConfig(config):
-    DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'

@@ -3,3 +3,7 @@ venv
 
 # Ignore _pycache__ folder
 __pycache__
+
+# Ignore the database File
+api
+
