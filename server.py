@@ -1,5 +1,5 @@
-from models import create_app, db, url_for
-from flask import render_template
+from models import create_app, db
+from flask import render_template, url_for
 
 app = create_app()
 
