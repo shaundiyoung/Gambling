@@ -1,4 +1,4 @@
-from models import create_app, db
+from models import create_app, db, url_for
 from flask import render_template
 
 app = create_app()
