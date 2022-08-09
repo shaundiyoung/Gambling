@@ -7,8 +7,9 @@ class prodConfig(config):
 
 class devConfig(config):
     DATABASE_URI = "sqlite:///temp/data.db"
+    HOST = "0.0.0.0"
+    DEBUG = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class testingConfig(config):
     DATABASE_URI = 'sqlite:///:memory:'
-    HOST = "0.0.0.0"
-    DEBUG = True
