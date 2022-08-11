@@ -46,12 +46,12 @@
                     <p> <span>User:</span> <span id="user"> Tom Clank</span></p>
                 </div>
                 <div class="col">
-                   <span>Account Balance: </span> <span> &#128176;</span><span id="bal">4500.00</span>
+                   <span>Account Balance: </span> <span> &#128176;</span><span id="bal">4500</span>
                 </div>
             </div>
             <div class="row">
               <div class="col-sm-9 text-center" id="pot">
-                <h1 id="guess" class="d display-1 text-light">
+                <h1 id="cashpot" class="d display-1 text-light">
                   12
                 </h1>
                 <audio id="myAudio">
@@ -65,6 +65,7 @@
                 <ul>
                   <li>Enter a number from 0-32 in the Place Bet Here Input Section</li>
                   <li>Successful Bet result in the Bet Amount Doubling</li>
+                  <li class="text-primary">Number Selected should be 3 less or higher than the outcome to win which will result in a percentile increase</li>
                   <li>Unsuccessful Bet the cost of the Bet will be subtracted</li>
                   <li class="text-danger"> You can't place a bet less than zero </li>
                   <li class="text-danger"> Don't worry if your balance is 0 cool down is 5 mins</li>
@@ -76,8 +77,8 @@
                 <button onclick="randomNum()" class="btn purple" style="font-size: 2rem;">
                   RESET
                 </button>
-                  <input class="form-control" type="number" name="val" id="val" max="1000000000000" min="10" placeholder="Place Bet Here">
-                  
+                  <input class="form-control" type="number" name="val" id="val" max="1000000000000" min="10" placeholder="Place Bet Here &#128176;10000">
+                  <input class="form-control" type="number" name="guess" id="guess" min="0" max="32" placeholder="Guess Number Here">
                   <button class="btn purple">
                     Place Bet
                   </button>

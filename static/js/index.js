@@ -1,12 +1,14 @@
-num = document.getElementById('guess');
+num = document.getElementById('cashpot');
 num.innerText = "00";
 let finishDate = 0;
 let startDate = new Date().getMinutes();
 let x = document.getElementById("myAudio"); 
 let cash = document.getElementById('bal');
+let val = document.getElementById('val');
+let guess = document.getElementById('guess');
 
 function randomNum(){
-    if (finishDate >= 10000){
+    if (finishDate >= 30000){
         finishDate = 0;
     }
     else{
