@@ -1,5 +1,5 @@
 num = document.getElementById('guess');
-num.innerText = 13;
+num.innerText = "00";
 let finishDate;
 let startDate = new Date().getMinutes();
 let x = document.getElementById("myAudio"); 

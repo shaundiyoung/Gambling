@@ -10,24 +10,24 @@
 </head>
 <body>
     <!-- Navigational Section -->
-    <div class=" bg-dark">
+    <div class=" bg-primary">
         <div class="container pt-4 pb-4">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">GAMBE-BLER</a>
+                  <a class="navbar-brand text-light" href="#">GAME-BLER</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link text-light" href="#">Purchase</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Change Pot</a>
+                        <a class="nav-link text-light" href="#">Change Pot</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Leader Board</a>
+                        <a class="nav-link text-light" href="#">Leader Board</a>
                       </li>
                     </ul>
                   </div>
@@ -42,11 +42,11 @@
     <div>
         <div class="container">
             <div class="row" style="font-size: 1.5rem;">
-                <div class="col" id="user">
-                    <p>Tom Clank</p>
+                <div class="col text-primary thick-text" id="user">
+                    <p> <span>User:</span> <span id="user"> Tom Clank</span></p>
                 </div>
-                <div class="col" id="amount">
-                    <span> &#128176;</span><span>4500.00</span>
+                <div class="col">
+                   <span>Account Balance: </span> <span> &#128176;</span><span id="bal">4500.00</span>
                 </div>
             </div>
             <div class="row">
@@ -59,24 +59,32 @@
                 </audio>
                 <!-- <img class="w-100 h-80" src="{{ url_for('static', filename='images/GamblingPot.png') }}" alt=""> -->
             </div>
-            <div class="col">
-              <h5 class="display-5">How To Play</h5>  
+            <div class="col container">
+              <h5 class="display-4">How To Play</h5>  
               <div>
-
                 </div>
+
+                <div>
+                  <div class="container">
+                <button onclick="randomNum()" class="btn btn-primary" style="font-size: 2rem;">
+                  RESET
+                </button>
+                  <input class="form-control" type="number" name="val" id="val" max="1000000000000" min="10" placeholder="Place Bet Here">
+                  
+                  <button class="btn btn-primary">
+                    Place Bet
+                  </button>
+                  <div>
+                    <p class="display-5">Projected Profit : <span> &#128176;</span><span id="Profit">20</span></p>
+                  </div>
+                </div>
+                </div>
+              
               </div>
             </div>
         </div>
     </div>
 
-    <div>
-      <div class="container">
-    <button onclick="randomNum()" class="btn btn-danger" style="font-size: 2rem;">
-      change the num
-    </button>
-      <input type="number" name="val" id="val" max="35" placeholder="Place Bet">
-      </div>
-    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
