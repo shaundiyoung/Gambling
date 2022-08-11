@@ -41,7 +41,7 @@
     
     <div>
         <div class="container">
-            <div class="row">
+            <div class="row" style="font-size: 1.5rem;">
                 <div class="col" id="user">
                     <p>Tom Clank</p>
                 </div>
@@ -50,7 +50,15 @@
                 </div>
             </div>
             <div class="row" id="pot">
-                <img class="w-75" src="{{ url_for('static', filename='images/GamblingPot.png') }}" alt="">
+              <div class="col">
+                <img class="w-100 h-80" src="{{ url_for('static', filename='images/GamblingPot.png') }}" alt="">
+            </div>
+            <div class="col">
+              <h5 class="display-5">How To Play</h5>  
+              <div>
+
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -60,10 +68,10 @@
     <h1 id="guess">
       12
     </h1>
-    <button onclick="randomNum()">
+    <button onclick="randomNum()" class="btn btn-danger" style="font-size: 2rem;">
       change the num
     </button>
-
+      <input type="number" name="val" id="val" max="35">
       </div>
     </div>
 
