@@ -17,3 +17,10 @@
 .thick-text{
     font-weight: 500;
 }
+.purple{
+    color: #FFF;
+    background-color: #6610f2;
+}
+.purple:hover{
+    color: rgb(199, 199, 199);
+}
