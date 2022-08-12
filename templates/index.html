@@ -42,7 +42,7 @@
     <div>
         <div class="container">
             <div class="row" style="font-size: 1.5rem;">
-                <div class="col purple thick-text" id="user">
+                <div class="col thick-text" id="user">
                     <p> <span>User:</span> <span id="user"> Tom Clank</span></p>
                 </div>
                 <div class="col">
@@ -59,21 +59,22 @@
                 </audio>
                 <!-- <img class="w-100 h-80" src="{{ url_for('static', filename='images/GamblingPot.png') }}" alt=""> -->
             </div>
-            <div class="col container">                <div>
+            <div class="col container">                
+              <div>
                   <div class="container">
-                <button onclick="randomNum()" class="btn purple" style="font-size: 2rem;">
+                <button class="btn purple" style="font-size: 2rem;">
                   RESET
                 </button>
-                  <input class="form-control" type="number" name="val" id="val" max="1000000000000" min="10" placeholder="Place Bet Here &#128176;10000">
+                  <input class="form-control" type="number" name="val" id="val" min="10" placeholder="Place Bet Here &#128176;10000" value="10">
                   <input class="form-control" type="number" name="guess" id="guess" min="0" max="32" placeholder="Guess Number Here">
-                  <button class="btn purple" onclick="submitVal()">
+                  <button onclick="randomNum()" class="btn purple" onclick="submitVal()">
                     Place Bet
                   </button>
                   <div>
                     <p class="display-5">Projected Profit : <span> &#128176;</span><span id="Profit">20</span></p>
                   </div>
-                </div>
-                </div>
+                </div> 
+              </div>
               <h5 class="display-4">How To Play</h5>  
               <div>
                 <ul>

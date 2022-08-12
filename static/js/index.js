@@ -7,8 +7,16 @@ let cash = document.getElementById('bal');
 let val = document.getElementById('val');
 let guess = document.getElementById('guess');
 
+
+
+val.addEventListener('mouseover', () =>{
+    document.getElementById('Profit').innerText = 0+val.value*2;
+});
+val.addEventListener('mouseout', () =>{
+    document.getElementById('Profit').innerText = 0+val.value*2;
+});
 function randomNum(){
-    if (finishDate >= 30000){
+    if (finishDate >= 7000){
         finishDate = 0;
     }
     else{
