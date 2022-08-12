@@ -24,3 +24,9 @@ function randomNum(){
 function initiallizeCount(){
     finishDate = startDate+1;
 }
+
+
+function submitVal(){
+    let guessnum = guess.value;
+    console.log(guessnum);
+}

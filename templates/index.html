@@ -59,27 +59,14 @@
                 </audio>
                 <!-- <img class="w-100 h-80" src="{{ url_for('static', filename='images/GamblingPot.png') }}" alt=""> -->
             </div>
-            <div class="col container">
-              <h5 class="display-4">How To Play</h5>  
-              <div>
-                <ul>
-                  <li>Enter a number from 0-32 in the Place Bet Here Input Section</li>
-                  <li>Successful Bet result in the Bet Amount Doubling</li>
-                  <li class="text-primary">Number Selected should be 3 less or higher than the outcome to win which will result in a percentile increase</li>
-                  <li>Unsuccessful Bet the cost of the Bet will be subtracted</li>
-                  <li class="text-danger"> You can't place a bet less than zero </li>
-                  <li class="text-danger"> Don't worry if your balance is 0 cool down is 5 mins</li>
-                </ul>
-                </div>
-
-                <div>
+            <div class="col container">                <div>
                   <div class="container">
                 <button onclick="randomNum()" class="btn purple" style="font-size: 2rem;">
                   RESET
                 </button>
                   <input class="form-control" type="number" name="val" id="val" max="1000000000000" min="10" placeholder="Place Bet Here &#128176;10000">
                   <input class="form-control" type="number" name="guess" id="guess" min="0" max="32" placeholder="Guess Number Here">
-                  <button class="btn purple">
+                  <button class="btn purple" onclick="submitVal()">
                     Place Bet
                   </button>
                   <div>
@@ -87,6 +74,19 @@
                   </div>
                 </div>
                 </div>
+              <h5 class="display-4">How To Play</h5>  
+              <div>
+                <ul>
+                  <li>Enter a number from 0-32 in the Place Bet Here Input Section</li>
+                  <li>Successful Bet result in the Bet Amount Doubling</li>
+                  <li class="text-primary">Number Selected should be 3 less or higher than the outcome to win which will result in a percentile increase</li>
+                  <li>Unsuccessful Bet the cost of the Bet will be subtracted</li>
+                  <li class="text-danger"> You can't place a bet less than TEN (10) </li>
+                  <li class="text-danger"> Don't worry if your balance is 0 cool down is 1 min</li>
+                </ul>
+                </div>
+
+
               
               </div>
             </div>
