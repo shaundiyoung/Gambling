@@ -18,6 +18,7 @@ class User(db.Model):
     id = db.Column(db.Integer(), nullable=False, primary_key=True, unique=True)
     score = db.Column(db.Float(), nullable=False)
     username = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(), nullable=False)
 
     def __init__(self, username):
         self.username = username
