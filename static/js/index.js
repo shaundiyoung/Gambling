@@ -41,14 +41,28 @@ function randomNum(){
 function checknumber(num, guessnum){
     if (num == guessnum){
         alert("You won");
+        cash.innerText = parseInt(cash.innerText) + val.value * 2;
         z.play();
     }
     else if (num-guessnum>-4 && num-guessnum<4){
         alert("Close enough");
+        
+        cash.innerText = parseInt(cash.innerText) + val.value * 1.5;
         z.play();
     }
     else{
+        cash.innerText = cash.innerText - val.value;
         y.play();
 
     }
 }
+
+
+function generateCash(){
+    if (parseInt(cash.innerText))
+    cash.innerText = parseInt(cash.innerText) + 1000;
+    setTimeout(generateCash, 100000);
+    }
+
+    generateCash();
+
