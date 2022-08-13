@@ -25,13 +25,13 @@ def home():
             return redirect('login')
 
         # return redirect('landing')
-    return render_template("login.html", form=form)
+    return render_template("signup.html", form=form)
 
 @app.route('/landing')
 def landing():
     return render_template("index.html")
 
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
     return render_template("login.html")
 
