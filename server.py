@@ -70,7 +70,7 @@ def add(amount):
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) + int(amount)
             db.session.commit()
-            return{"success":"Value Added"}
+            return{"newscore":user.score}
         else:
             return "Invalid Amount"
     else:
@@ -85,7 +85,7 @@ def sub(amount):
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) - int(amount)
             db.session.commit()
-            return{"success":"Value Subtracted"}
+            return{"newscore":user.score}
         else:
             return "Invalid Amount"
     else:

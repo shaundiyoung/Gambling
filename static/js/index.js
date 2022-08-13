@@ -12,6 +12,26 @@ let cash = document.getElementById('bal');
 let val = document.getElementById('val');
 let guess = document.getElementById('guess');
 
+function add(sum){
+    fetch("/api/add/"+sum, {
+        method:"POST"
+    }).then(data =>data.json()).then(json =>{
+        console.log(json);
+    }).catch(
+
+    )
+}
+
+function sub(sum){
+    fetch("/api/sub/"+sum, {
+        method:"POST"
+    }).then(data =>data.json()).then(json =>{
+        console.log(json);
+    }).catch(
+
+    )
+}
+
 
 
 val.addEventListener('mouseover', () =>{
