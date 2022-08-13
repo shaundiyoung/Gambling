@@ -56,5 +56,34 @@ def board():
     return render_template("board.html", userdata=userdata)
 
 
+@app.route('/api/add/<amount>', method=["GET", "POST"])
+def add(amount):
+    if request.method == "POST":
+        if "user" not in session:
+            return {"error":"User Not logged In"}
+        elif amount>0:
+            user = User.query.filter_by(username=session['user']).first()
+            user.score = int(user.score) + int(amount)
+            db.session.commit()
+
+
+@app.route('/api/sub/<amount>', method=["GET", "POST"])
+def sub(amount):
+    if request.method == "POST":
+        if "user" not in session:
+            return {"error":"User Not logged In"}
+        elif amount>0:
+            user = User.query.filter_by(username=session['user']).first()
+            user.score = int(user.score) - int(amount)
+            db.session.commit()
+
+@app.route('/logout')
+def logout():
+    if "user" in session:
+        session.pop("user")
+        return redirect("login")
+    else:
+        return redirect("login")
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0")

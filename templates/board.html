@@ -10,6 +10,33 @@
 </head>
 <body>
 
+        <!-- Navigational Section -->
+        <div class=" bg-primary" style="font-size: 1.5rem;">
+            <div class="container pt-4 pb-4">
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand text-light" href="/" style="font-size: 2rem;">GAME-BLER</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="/board">Leader Board</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="/logout">Log Out</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+        <!-- End of Navigational Section -->
+
+
+
 <div>
     <div class="container">
         <div class="row">
@@ -18,7 +45,7 @@
         <div class="row">
             <ul class="list-group">
                 {% for i in userdata %}
-                <li class="list-group-item">{{ userdata.index(i)+1 }}<span class="">{{ i[0] }}</span><p class="float-end">&#128176;{{ i[1] }}</p></li>
+                <li class="list-group-item">{{ userdata.index(i)+1 }}: <span class="">{{ i[0] }}</span><p class="float-end">&#128176;{{ i[1] }}</p></li>
                 {% endfor %}
             </ul>
         </div>
