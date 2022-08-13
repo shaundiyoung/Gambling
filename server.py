@@ -53,12 +53,15 @@ def login():
 
 @app.route('/board')
 def board():
-    userdata = User.query.all()
-    userdata = [(i.username, i.score) for i in userdata]
-    return render_template("board.html", userdata=userdata)
+    if "user" not in session:
+        return redirect('login')
+    else:
+        userdata = User.query.all()
+        userdata = [(i.username, i.score) for i in userdata]
+        return render_template("board.html", userdata=userdata)
 
 
-@app.route('/api/add/<amount>', method=["GET", "POST"])
+@app.route('/api/add/<amount>', methods=["GET", "POST"])
 def add(amount):
     if request.method == "POST":
         if "user" not in session:
@@ -73,7 +76,7 @@ def add(amount):
     else:
         return"Method incorrect"
 
-@app.route('/api/sub/<amount>', method=["GET", "POST"])
+@app.route('/api/sub/<amount>', methods=["GET", "POST"])
 def sub(amount):
     if request.method == "POST":
         if "user" not in session:
