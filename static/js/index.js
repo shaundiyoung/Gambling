@@ -16,7 +16,7 @@ function add(sum){
     fetch("/api/add/"+sum, {
         method:"POST"
     }).then(data =>data.json()).then(json =>{
-        console.log(json);
+        cash.innerText = json.newscore;
     }).catch(
 
     );
@@ -26,7 +26,7 @@ function sub(sum){
     fetch("/api/sub/"+sum, {
         "method":"POST"
     }).then(data => data.json()).then(json =>{
-        console.log(json);
+        cash.innerText = json.newscore;
     }).catch(
 
     );
