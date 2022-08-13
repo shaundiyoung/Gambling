@@ -13,5 +13,5 @@ class myForm(FlaskForm):
 
 class signUp(FlaskForm):
     name = StringField("name: ", validators=[DataRequired()])
-    password = PasswordField("Password", validators=[DataRequired(), EqualTo('password1', message='Names must match')])
-    password1 = PasswordField("Confirm Password:")
+    password = PasswordField("Password", validators=[DataRequired()])
+    password1 = PasswordField("Confirm Password:", validators=[DataRequired()])

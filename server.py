@@ -16,6 +16,13 @@ def home():
         for i in all_user:
             if form.name.data == i[0]:
                 flash("User Already Exists")
+                redirect('/')
+        if form.password1.data != form.password.data:
+                flash("Passwords don't match")
+                redirect('/')
+        else:
+            redirect('landing')
+
         # return redirect('landing')
     return render_template("login.html", form=form)
 
