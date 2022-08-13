@@ -33,7 +33,18 @@ def landing():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    form = myForm()
+    user = User.query.all()
+    all_user = [(i.username, i.password) for i in user]
+    if form.validate_on_submit():
+        for i in all_user:
+            if form.name.data == i[0] and form.password.data == i[1]:
+                return redirect('landing')
+            elif form.name.data == i[0]:
+                flash("Password Does Not Match")
+        flash("user account does not exist")
+            
+    return render_template("login.html", form=form)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
