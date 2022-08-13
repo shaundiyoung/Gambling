@@ -29,7 +29,11 @@ def home():
 
 @app.route('/landing')
 def landing():
-    return render_template("index.html")
+    if "user" not in session:
+        return redirect('login')
+    else:
+        user = User.query.filter_by(username=session['user']).first()
+        return render_template("index.html", user=user)
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -39,10 +43,9 @@ def login():
     if form.validate_on_submit():
         for i in all_user:
             if form.name.data == i[0] and form.password.data == i[1]:
+                session["user"] = i[0]
                 return redirect('landing')
-            elif form.name.data == i[0]:
-                flash("Password Does Not Match")
-        flash("user account does not exist")
+        flash("Incorrect Password or Username")
             
     return render_template("login.html", form=form)
 

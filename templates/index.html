@@ -43,16 +43,16 @@
         <div class="container">
             <div class="row" style="font-size: 1.5rem;">
                 <div class="col thick-text" id="user">
-                    <p> <span>User:</span> <span id="user"> Tom Clank</span></p>
+                    <p> <span>User:</span> <span id="user">{{ user.username }}</span></p>
                 </div>
                 <div class="col">
-                   <span>Account Balance: </span> <span> &#128176;</span><span id="bal">4500</span>
+                   <span>Account Balance: </span> <span> &#128176;</span><span id="bal">{{ user.score }}</span>
                 </div>
             </div>
             <div class="row">
               <div class="col-sm-9 text-center" id="pot">
                 <h1 id="cashpot" class="d display-1 text-light">
-                  12
+                  00
                 </h1>
                 <audio id="myAudio">
                   <source src="{{ url_for('static', filename='/js/numeffect.mp3') }}" type="audio/mpeg">
@@ -73,7 +73,7 @@
                 <button class="btn purple" style="font-size: 2rem;">
                   RESET
                 </button>
-                  <input class="form-control" type="number" name="val" id="val" min="10" placeholder="Place Bet Here &#128176;10000" value="10">
+                  <input class="form-control" type="number" name="val" id="val" min="10" max="{{ user.score }}" placeholder="Place Bet Here &#128176;10000" value="10">
                   <input class="form-control" type="number" name="guess" id="guess" min="0" max="32" placeholder="Guess Number Here">
                   <button onclick="randomNum()" class="btn purple">
                     Place Bet
