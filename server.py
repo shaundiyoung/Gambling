@@ -53,7 +53,7 @@ def login():
 def board():
     userdata = User.query.all()
     userdata = [(i.username, i.score) for i in userdata]
-    return render_template(userdata=userdata)
+    return render_template("board.html", userdata=userdata)
 
 
 if __name__ == '__main__':
