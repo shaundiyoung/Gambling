@@ -49,5 +49,12 @@ def login():
             
     return render_template("login.html", form=form)
 
+@app.route('/board')
+def board():
+    userdata = User.query.all()
+    userdata = [(i.username, i.score) for i in userdata]
+    return render_template(userdata=userdata)
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
