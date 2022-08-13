@@ -22,6 +22,8 @@ def home():
                 redirect('/')
         else:
             user = User(username=form.name.data, password=form.password.data)
+            db.session.add(user)
+            db.session.commit()
             return redirect('login')
 
         # return redirect('landing')
@@ -65,7 +67,11 @@ def add(amount):
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) + int(amount)
             db.session.commit()
-
+            return{"success":"Value Added"}
+        else:
+            return "Invalid Amount"
+    else:
+        return"Method incorrect"
 
 @app.route('/api/sub/<amount>', method=["GET", "POST"])
 def sub(amount):
@@ -76,6 +82,11 @@ def sub(amount):
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) - int(amount)
             db.session.commit()
+            return{"success":"Value Subtracted"}
+        else:
+            return "Invalid Amount"
+    else:
+        return"Method incorrect"
 
 @app.route('/logout')
 def logout():
