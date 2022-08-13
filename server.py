@@ -7,8 +7,8 @@ app = create_app()
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    signUp = signUp()
-    return render_template("login.html", signUp=signUp)
+    form = signUp()
+    return render_template("login.html", form=form)
 
 @app.route('/landing')
 def landing():

@@ -12,14 +12,20 @@
 
     <div>
         <div class="container">
-            <div>
+            <div class="row">
+                <h1 class="display-1 text-center"> Sign Up</h1>
+            </div>
+            <div class="row">
                 <form method="POST" action="/">
-                    {{ signUp.csrf_token }}
-                    {{ signUp.name.label }} {{ signUp.name(size=20) }}
-                    {{ signUp.password.label }} {{ signUp.password(size=20) }}
-                    {{ signUp.password1.label }} {{ signUp.password1(size=20) }}
-                    <input type="submit" value="Go">
+                    {{ form.csrf_token }}
+                    {{ form.name.label(class="form-label") }} {{ form.name(size=20, class="form-control") }}
+                    {{ form.password.label }} {{ form.password(size=20, class="form-control") }}
+                    {{ form.password1.label }} {{ form.password1(size=20, class="form-control") }}
+                    <input type="submit" value="Go" class="btn purple">
                 </form>
+            </div>
+            <div class="row">
+
             </div>
         </div>
     </div>
