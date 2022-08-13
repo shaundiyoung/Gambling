@@ -1,5 +1,5 @@
 from models import create_app, db
-from flask import render_template, url_for, flash, request, redirect, session
+from flask import render_template, url_for, flash, request, redirect, session, jsonify
 from myforms import myForm, signUp
 from models import User
 
@@ -66,30 +66,30 @@ def add(amount):
     if request.method == "POST":
         if "user" not in session:
             return {"error":"User Not logged In"}
-        elif amount>0:
+        elif int(amount)>0:
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) + int(amount)
             db.session.commit()
-            return{"newscore":user.score}
+            return jsonify({"newscore":user.score})
         else:
-            return "Invalid Amount"
+            return jsonify({"Invalid":" Amount"})
     else:
-        return"Method incorrect"
+        return jsonify({"Method": "incorrect"})
 
 @app.route('/api/sub/<amount>', methods=["GET", "POST"])
 def sub(amount):
     if request.method == "POST":
         if "user" not in session:
             return {"error":"User Not logged In"}
-        elif amount>0:
+        elif int(amount)>0:
             user = User.query.filter_by(username=session['user']).first()
             user.score = int(user.score) - int(amount)
             db.session.commit()
-            return{"newscore":user.score}
+            return jsonify({"newscore":user.score})
         else:
-            return "Invalid Amount"
+            return jsonify({"Invalid":" Amount"})
     else:
-        return"Method incorrect"
+        return jsonify({"Method": "incorrect"})
 
 @app.route('/logout')
 def logout():

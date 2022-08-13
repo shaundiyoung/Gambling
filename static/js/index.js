@@ -19,17 +19,17 @@ function add(sum){
         console.log(json);
     }).catch(
 
-    )
+    );
 }
 
 function sub(sum){
     fetch("/api/sub/"+sum, {
-        method:"POST"
-    }).then(data =>data.json()).then(json =>{
+        "method":"POST"
+    }).then(data => data.json()).then(json =>{
         console.log(json);
     }).catch(
 
-    )
+    );
 }
 
 
@@ -61,17 +61,16 @@ function randomNum(){
 function checknumber(num, guessnum){
     if (num == guessnum){
         alert("You won");
-        cash.innerText = parseInt(cash.innerText) + val.value * 2;
+        add(val.value * 2);
         z.play();
     }
     else if (num-guessnum>-4 && num-guessnum<4){
         alert("Close enough");
-        
-        cash.innerText = parseInt(cash.innerText) + val.value * 1.5;
+        add(val.value * 1.5);
         z.play();
     }
     else{
-        cash.innerText = cash.innerText - val.value;
+        sub(val.value);
         y.play();
 
     }
@@ -79,10 +78,9 @@ function checknumber(num, guessnum){
 
 
 function generateCash(){
-    if (parseInt(cash.innerText))
-    cash.innerText = parseInt(cash.innerText) + 1000;
+    add(1000);
     setTimeout(generateCash, 100000);
     }
 
-    generateCash();
+generateCash();
 
