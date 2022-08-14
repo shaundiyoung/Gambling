@@ -15,7 +15,7 @@
             <div class="container pt-4 pb-4">
                 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                     <div class="container-fluid">
-                      <a class="navbar-brand text-light" href="/" style="font-size: 2rem;">GAME-BLER</a>
+                      <a class="navbar-brand text-light" href="/landing" style="font-size: 2rem;">GAME-BLER</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -44,8 +44,8 @@
         </div>
         <div class="row">
             <ul class="list-group">
-                {% for i in userdata %}
-                <li class="list-group-item">{{ userdata.index(i)+1 }}: <span class="">{{ i[0] }}</span><p class="float-end">&#128176;{{ i[1] }}</p></li>
+                {% for i in range (1, (userdata|length)+1) %}
+                <li class="list-group-item">{{ i }}: <span class="">{{ userdata[-i][0] }}</span><p class="float-end">&#128176;{{ userdata[-i][1] }}</p></li>
                 {% endfor %}
             </ul>
         </div>

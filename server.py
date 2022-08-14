@@ -58,6 +58,7 @@ def board():
     else:
         userdata = User.query.all()
         userdata = [(i.username, i.score) for i in userdata]
+        userdata = sort_tuple_list(userdata)
         return render_template("board.html", userdata=userdata)
 
 
@@ -98,6 +99,11 @@ def logout():
         return redirect("login")
     else:
         return redirect("login")
+
+def sort_tuple_list(vals):
+    vals.sort(key = lambda x: x[1])
+    print(vals)
+    return vals
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
