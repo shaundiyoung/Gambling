@@ -100,10 +100,10 @@ def logout():
     else:
         return redirect("login")
 
-def sort_tuple_list(vals):
-    vals.sort(key = lambda x: x[1])
-    print(vals)
-    return vals
+def sort_tuple_list(tuplelist):
+    tuplelist.sort(key = lambda x: x[1])
+    print(tuplelist)
+    return tuplelist
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
